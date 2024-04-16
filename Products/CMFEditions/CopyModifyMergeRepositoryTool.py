@@ -305,6 +305,11 @@ class CopyModifyMergeRepositoryTool(UniqueObject,
             # modifiers can abort save operations under certain conditions
             sp.rollback()
             raise
+        except AttributeError:
+            # in ArchivistTool.py
+            # after a purge, the LazyHistory.__get_item__ data contains a ZVCStorageTool.Removed object
+            # This last one doesn't contain an object attribute
+            pass
 
     # -------------------------------------------------------------------
     # methods implementing IPurgeSupport

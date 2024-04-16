@@ -8,6 +8,10 @@ Changelog
 
 .. towncrier release notes start
 
+2.2.24 (unreleased)
+-------------------
+- Added try except to handle a purged object missing
+  [sgeulette]
 
 2.2.23 (2016-12-05)
 -------------------
